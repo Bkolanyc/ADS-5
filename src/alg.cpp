@@ -4,13 +4,13 @@
 #include "tstack.h"
 int priority(char a) {
   switch (a) {
-      case '(': return 0;
-      case ')': return 1;
-      case '+': return 2;
-      case '-': return 2;
-      case '*': return 3;
-      case '/': return 3;
-      default: return -1;
+    case '(': return 0;
+    case ')': return 1;
+    case '+': return 2;
+    case '-': return 2;
+    case '*': return 3;
+    case '/': return 3;
+    default: return -1;
   }
 }
 
@@ -23,7 +23,8 @@ std::string infx2pstfx(std::string inf) {
     int prior;
     prior = priority(inf[i]);
     if (prior > -1) {
-      if ((prior == 0 || prior > priority(head) || stack1.isEmpty()) && inf[i] != ')') {
+      if ((prior == 0 || prior > priority(head) ||
+           stack1.isEmpty()) && inf[i] != ')') {
         if (stack1.isEmpty())
           head = inf[i];
         stack1.push(inf[i]);
