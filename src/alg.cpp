@@ -19,7 +19,6 @@ int priority(char a) {
       return -1;
   }
 }
-
 std::string infx2pstfx(std::string inf) {
   // добавьте код
   std::string str;
@@ -81,6 +80,7 @@ int calculator(char operate, int x, int y) {
       return x * y;
       break;
   }
+  return 0;
 }
 
 int eval(std::string pref) {
