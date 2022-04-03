@@ -60,19 +60,19 @@ std::string infx2pstfx(std::string inf) {
 }
 int calculator(char operate, int x, int y) {
   switch (operate) {
-case '+':
-return x + y;
-break;
-case '-':
-return x - y;
-break;
-case '*':
-return x * y;
-break;
-case '/':
-return x / y;
-break;
-}
+      case '+':
+          return x + y;
+          break;
+      case '-':
+          return x - y;
+          break;
+      case '*':
+          return x * y;
+          break;
+      case '/':
+          return x / y;
+          break;
+  }
 }
 int eval(std::string pst) {
 TStack <int, 100> stack2;
