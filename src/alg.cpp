@@ -1,23 +1,29 @@
 // Copyright 2021 NNTU-CS
 #include <string>
-#include <map>
 #include "tstack.h"
 int priority(char a) {
   switch (a) {
-    case '(': return 0;
-    case ')': return 1;
-    case '+': return 2;
-    case '-': return 2;
-    case '*': return 3;
-    case '/': return 3;
-    default: return -1;
+    case '(':
+      return 0;
+    case ')':
+      return 1;
+    case '+':
+      return 2;
+    case '-':
+      return 2;
+    case '*':
+      return 3;
+    case '/':
+      return 3;
+    default:
+      return -1;
   }
 }
 
 std::string infx2pstfx(std::string inf) {
   // добавьте код
   char head = 0;
-  TStack <char> stack1;
+  TStack <char, 100> stack1;
   std::string str;
   for (int i = 0; i < inf.length(); i++) {
     int prior;
@@ -79,7 +85,7 @@ int calculator(char operate, int x, int y) {
 
 int eval(std::string pref) {
   // добавьте код
-  TStack <int> stack2;
+  TStack <int, 100> stack2;
   int i = 0, result = 0;
   char ch = pref[i];
   while (ch) {
