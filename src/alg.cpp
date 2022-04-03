@@ -14,7 +14,7 @@ default: return -1;
 }
 std::string infx2pstfx(std::string inf) {
     char head = 0;
-    TStack<char, 100> stack1;
+    TStack <char, 100> stack1;
     std::string str;
     for (int i = 0; i < inf.length() ; i++) {
         int prior;
@@ -72,10 +72,10 @@ break;
 case '/':
 return x / y;
 break;
-  }
+}
 }
 int eval(std::string pst) {
-TStack<int, 100> stack2;
+TStack <int, 100> stack2;
 int i = 0, result = 0;
 char ch = pst[i];
 while (ch) {
