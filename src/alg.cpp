@@ -22,9 +22,9 @@ int priority(char a) {
 
 std::string infx2pstfx(std::string inf) {
   // добавьте код
+  std::string str;
   char head = 0;
   TStack <char, 100> stack1;
-  std::string str;
   for (int i = 0; i < inf.length(); i++) {
     int prior;
     prior = priority(inf[i]);
@@ -78,7 +78,7 @@ int calculator(char operate, int x, int y) {
       return x / y;
       break;
     case '*':
-      return x * y:
+      return x * y;
       break;
   }
 }
@@ -95,7 +95,7 @@ int eval(std::string pref) {
       while (ch != ' ') {
         numb += (ch - 48) * dec;
         dec *= 10;
-        ch = pref[++];
+        ch = pref[++i];
       }
       stack2.push(numb);
     } else {
