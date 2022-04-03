@@ -73,6 +73,7 @@ int calculator(char operate, int x, int y) {
           return x / y;
           break;
   }
+    return 0;
 }
 int eval(std::string pst) {
 TStack <int, 100> stack2;
