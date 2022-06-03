@@ -6,10 +6,10 @@ const int s = 100;
 
 template<typename type, int s>
 class TStack {
-private:
+ private:
     type a[100];
     int top;
-public:
+ public:
     TStack() : top(-1) { }
     type get() const {
         return a[top];
