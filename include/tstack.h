@@ -1,27 +1,32 @@
-// Copyright 2022 NNTU-CS
-#ifndef INCLUDE_TPQUEUE_H_
-#define INCLUDE_TPQUEUE_H_
+// Copyright 2021 NNTU-CS
+#ifndef INCLUDE_TSTACK_H_
+#define INCLUDE_TSTACK_H_
 
-template<typename T, int size>
-class TPQueue {
+const int s = 100;
+
+template<typename type, int s>
+class TStack {
 private:
-T ar[100];
-int k, m;
+    type a[100];
+    int top;
 public:
-TPQueue() : k(0), m(0) {}
-void push(T znach) {
-int i = m++;
-while ((--i >= k) && (ar[i % size].prior < znach.prior)) {
-ar[(i + 1) % size] = ar[i % size];
-}
-ar[(i + 1) % size] = znach;
-}
-T pop() {
-return ar[(k++) % size];
-}
+    TStack() : top(-1) { }
+    type get() const {
+        return a[top];
+    }
+    bool isEmpty() const {
+        return top == -1;
+    }
+    bool isFull() const {
+        return top == s - 1;
+    }
+    void pop() {
+        if (top >= 0)
+            top--;
+    }
+    void push(type item) {
+        if (top < s - 1)
+            a[++top] = item;
+    }
 };
-struct SYM {
-  char ch;
-  int prior;
-};
-#endif  // INCLUDE_TPQUEUE_H_
+#endif  // INCLUDE_TSTACK_H_
